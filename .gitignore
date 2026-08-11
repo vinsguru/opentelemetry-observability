@@ -45,5 +45,5 @@
 **/mvnw
 **/mvnw.cmd
 **/node_modules/
-
+versions.txt
 .DS_Store

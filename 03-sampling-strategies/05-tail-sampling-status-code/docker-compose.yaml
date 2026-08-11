@@ -48,13 +48,13 @@ services:
     depends_on:
       - otel-collector
   otel-collector:
-    image: otel/opentelemetry-collector-contrib:0.133.0
+    image: otel/opentelemetry-collector-contrib:0.158.0
     container_name: otel-collector
     command: ["--config=/etc/otel/collector-config.yml"]
     volumes:
       - ./docker-volume/collector-config.yaml:/etc/otel/collector-config.yml
   tempo:
-    image: grafana/tempo:2.8.2
+    image: grafana/tempo:3.0.2
     container_name: tempo
     command: ["-config.file=/etc/tempo.yaml"]
     volumes:
@@ -62,7 +62,7 @@ services:
     depends_on:
       - otel-collector
   grafana:
-    image: grafana/grafana:12.0
+    image: grafana/grafana:13.1.3
     container_name: grafana
     volumes:
       - ./docker-volume/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasource.yaml

@@ -9,7 +9,7 @@ import org.springframework.web.client.RestClient;
 
 @Configuration
 public class ApplicationConfiguration {
-
+    
     @Bean
     public ActorClient actorClient(RestClient.Builder builder, @Value("${actor-service.url}") String baseUrl) {
         var client = builder.baseUrl(baseUrl).build();

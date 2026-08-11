@@ -1,6 +1,6 @@
 services:
   otel-collector:
-    image: otel/opentelemetry-collector-contrib:0.133.0
+    image: otel/opentelemetry-collector-contrib:0.158.0
     container_name: otel-collector
     command: ["--config=/etc/otel/collector-config.yml"]
     volumes:
@@ -8,7 +8,7 @@ services:
     ports:
       - "4317:4317"
   loki:
-    image: grafana/loki:3.5.3
+    image: grafana/loki:3.7.6
     container_name: loki
     command: -config.file=/etc/loki/loki-config.yaml
     volumes:
@@ -16,7 +16,7 @@ services:
     depends_on:
       - otel-collector
   tempo:
-    image: grafana/tempo:2.8.2
+    image: grafana/tempo:3.0.2
     container_name: tempo
     command: ["-config.file=/etc/tempo.yaml"]
     volumes:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - otel-collector
   prometheus:
-    image: prom/prometheus:v3.5.0
+    image: prom/prometheus:v3.13.2
     container_name: prometheus
     volumes:
       - ./docker-volume/prometheus.yaml:/etc/prometheus/prometheus.yaml
@@ -35,7 +35,7 @@ services:
     depends_on:
       - otel-collector
   grafana:
-    image: grafana/grafana:12.0
+    image: grafana/grafana:13.1.3
     container_name: grafana
     volumes:
       - ./docker-volume/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
