@@ -148,23 +148,23 @@
                 "value": [
                   {
                     "options": {
-                      "DEBUG": {
+                      "debug": {
                         "color": "light-yellow",
                         "index": 0
                       },
-                      "ERROR": {
+                      "error": {
                         "color": "red",
                         "index": 1
                       },
-                      "INFO": {
+                      "info": {
                         "color": "light-green",
                         "index": 2
                       },
-                      "TRACE": {
+                      "trace": {
                         "color": "#404040",
                         "index": 4
                       },
-                      "WARN": {
+                      "warn": {
                         "color": "orange",
                         "index": 3
                       }

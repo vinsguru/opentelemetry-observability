@@ -1,5 +1,3 @@
-# https://grafana.com/docs/tempo/latest/configuration/#configure-tempo
-
 server:
   http_listen_address: 0.0.0.0
   http_listen_port: 3200
@@ -9,18 +7,9 @@ distributor:
     otlp:
       protocols:
         grpc:
-          endpoint: "tempo:4317"
+          endpoint: "0.0.0.0:4317"
         http:
-          endpoint: "tempo:4318"
-
-ingester:
-  trace_idle_period: 10s
-  max_block_bytes: 1048576
-  max_block_duration: 5m
-
-compactor:
-  compaction:
-    block_retention: 1h
+          endpoint: "0.0.0.0:4318"
 
 storage:
   trace:

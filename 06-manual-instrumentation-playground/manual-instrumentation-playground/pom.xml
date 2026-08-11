@@ -9,13 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>24</maven.compiler.source>
-        <maven.compiler.target>24</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <otel.version>1.52.0</otel.version>
-        <okhttp.version>4.12.0</okhttp.version>
+        <otel.version>1.65.0</otel.version>
         <logback.version>1.5.18</logback.version>
-        <logback.appender.version>2.18.1-alpha</logback.appender.version>
+        <logback.appender.version>2.30.0-alpha</logback.appender.version>
     </properties>
 
     <dependencies>
@@ -30,11 +29,6 @@
         <dependency>
             <groupId>io.opentelemetry</groupId>
             <artifactId>opentelemetry-exporter-otlp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>${okhttp.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -54,6 +48,13 @@
                 <groupId>io.opentelemetry</groupId>
                 <artifactId>opentelemetry-bom</artifactId>
                 <version>${otel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-bom-alpha</artifactId>
+                <version>${otel.version}-alpha</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

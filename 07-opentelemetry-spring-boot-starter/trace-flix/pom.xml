@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.4</version>
+		<version>4.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.vinsguru</groupId>
@@ -20,9 +20,9 @@
 		<module>review-service</module>
 	</modules>
 	<properties>
-		<maven.compiler.source>24</maven.compiler.source>
-		<maven.compiler.target>24</maven.compiler.target>
-		<otel.version>2.20.1</otel.version>
+		<maven.compiler.source>25</maven.compiler.source>
+		<maven.compiler.target>25</maven.compiler.target>
+		<otel.version>2.30.0</otel.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -44,7 +44,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<release>24</release>
+					<release>25</release>
 				</configuration>
 			</plugin>
 		</plugins>
